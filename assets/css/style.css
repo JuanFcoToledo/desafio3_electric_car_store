@@ -1,0 +1,320 @@
+body {
+  background-color: white;
+  color: white !important;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+@media (max-width: 576px) /* Mobile */ {
+  .pagina {
+    grid-template-rows: auto auto 1fr auto;
+
+    grid-template-columns: auto;
+
+    min-height: 100vh;
+    grid-template-areas:
+      "header"
+      "buscador"
+      "seccion-principal"
+      "footer";
+  }
+
+  header {
+    background-color: #133e87;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+  }
+
+  header .menuIcon {
+    margin: 15px 20px 0px 0px;
+  }
+
+  header .menu {
+    display: none;
+  }
+
+  main .content {
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  main .content .carSale {
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 360px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #c0c0c07b;
+    border-radius: 5px;
+  }
+
+  main .content .ocultar {
+    display: none;
+  }
+
+  footer {
+    display: grid;
+    justify-items: center;
+    gap: 5px;
+    padding: 20px 0px 25px 0px;
+    background-color: #042661;
+  }
+}
+
+@media (min-width: 576px) /* Tablet */ {
+  header {
+    background-color: #133e87;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    font-size: 20px;
+  }
+
+  header .menuIcon {
+    display: none;
+  }
+
+  header .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 20px;
+    margin: 4px 30px;
+    gap: 20px;
+  }
+
+  .pagina {
+    min-height: 100vh;
+
+    grid-template-areas:
+      "header header"
+      "buscador seccion-principal"
+      "footer footer";
+
+    grid-template-rows: 1fr auto auto;
+    grid-template-columns: 1fr 5fr;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 20px 0px 25px 0px;
+    background-color: #042661;
+  }
+
+  main .content {
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  main .content .carSale {
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 270px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #c0c0c07b;
+    border-radius: 5px;
+  }
+
+  footer p {
+    margin: 5px 0px 10px 0px;
+    text-align: center;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 992px) /* Desktop */ {
+  header {
+    background-color: #133e87;
+    display: flex !important;
+    justify-content: flex-start;
+    flex-direction: column;
+    font-size: 25px;
+    gap: 10px;
+  }
+
+  header .titulo i {
+    margin-top: 5px !important;
+    font-size: 23px !important;
+  }
+
+  header .menuIcon {
+    display: none;
+  }
+
+  header .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    margin-top: 40px;
+    gap: 20px;
+  }
+
+  .pagina {
+    min-height: 100vh;
+
+    grid-template-areas:
+      "header buscador  buscador"
+      "header seccion-principal seccion-principal"
+      "footer seccion-principal seccion-principal";
+
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 4fr 15fr auto;
+  }
+
+  main .content {
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  main .content .carSale {
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 360px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #c0c0c07b;
+    border-radius: 5px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 30px 0px 25px 0px;
+    background-color: #042661;
+  }
+
+  footer p {
+    margin: 5px 0px 20px 0px;
+    text-align: center;
+    font-size: 18px;
+  }
+}
+
+.pagina {
+  display: grid;
+}
+
+header {
+  grid-area: header;
+}
+
+header .titulo {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 15px 15px;
+}
+
+header .titulo i {
+  margin: 0px 10px 0px 0px;
+}
+
+header .titulo h2 {
+  font-weight: 100;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 20px 0px 50px 0px;
+}
+
+.pagination a {
+  color: black;
+  padding: 6px 12px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+}
+
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+nav {
+  grid-area: buscador;
+  background-color: #c0c0c07b;
+  color: black;
+  display: flex;
+  justify-content: top flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0px 10px 0px;
+  height: auto;
+}
+
+nav p {
+  font-size: small;
+  margin-bottom: 5px;
+}
+
+nav select {
+  width: 280px;
+  padding: 7px 7px 7px 7px;
+  margin: 10px;
+  border-radius: 5px;
+  border-color: rgb(194, 194, 193);
+}
+
+main {
+  grid-area: seccion-principal;
+}
+
+main .content .carSale img {
+  width: auo;
+  height: 400px;
+}
+
+main .content .carSale h3 {
+  margin-top: 10px;
+}
+
+main .content .carSale h4 {
+  margin-bottom: 15px;
+}
+
+main .content .carSale button {
+  background-color: #042661;
+  color: white;
+  padding: 7px 15px;
+  border-radius: 3px;
+}
+
+footer {
+  grid-area: footer;
+}
